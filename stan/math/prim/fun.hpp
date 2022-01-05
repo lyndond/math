@@ -71,6 +71,7 @@
 #include <stan/math/prim/fun/diag_matrix.hpp>
 #include <stan/math/prim/fun/diag_post_multiply.hpp>
 #include <stan/math/prim/fun/diag_pre_multiply.hpp>
+#include <stan/math/prim/fun/diag_pre_multiply_tri.hpp>
 #include <stan/math/prim/fun/diagonal.hpp>
 #include <stan/math/prim/fun/digamma.hpp>
 #include <stan/math/prim/fun/dims.hpp>
