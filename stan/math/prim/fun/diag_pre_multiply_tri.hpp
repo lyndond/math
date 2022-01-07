@@ -29,13 +29,13 @@ auto diag_pre_multiply_tri(const T1& m1, const T2& m2) {
   check_lower_triangular("diag_pre_multiply_tri", "m2", m2);
 
   const int n = m2.rows();
-  Eigen::MatrixXd res(m2);
+  Eigen::MatrixXd res = Eigen::MatrixXd::Zero(n, n);
+  
+  for (size_t r=0; r<m1.size(); ++r) {
+    // segment
+    res.row(r).segment(0, r+1) = m1(r) * m2.row(r).segment(0,r+1);
+  }
 
-  for(size_t r = 0; r<m1.size(); ++r){
-      for(size_t c = 0; c<=r; ++c){
-          res(r, c) = m1(r) * m2(r, c);
-      }
-  } 
   return res;
 }
 

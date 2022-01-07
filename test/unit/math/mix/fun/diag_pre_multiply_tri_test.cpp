@@ -15,7 +15,7 @@ void expect_diag_pre_multiply_tri(const Eigen::VectorXd& v,
 
 TEST(MathMixMatFun, diagPreMultiplyTri) {
   using stan::test::relative_tolerance;
-  // // 0 x 0
+  // 0 x 0
   // Eigen::MatrixXd a00(0, 0);
   // Eigen::VectorXd u0(0);
   // expect_diag_pre_multiply_tri(u0, a00);
@@ -28,15 +28,16 @@ TEST(MathMixMatFun, diagPreMultiplyTri) {
   expect_diag_pre_multiply_tri(u1, a11);
 
   // // 2 x 2
-  // Eigen::MatrixXd a22(2, 2);
-  // a22 << 1, 10, 100, 1000;
-  // Eigen::VectorXd u2(2);
-  // u2 << 2, 3;
-  // expect_diag_pre_multiply_tri(u2, a22);
+  Eigen::MatrixXd a22(2, 2);
+  a22 << 1, 0, 
+        100, 1000;
+  Eigen::VectorXd u2(2);
+  u2 << 2, 3;
+  expect_diag_pre_multiply_tri(u2, a22);
 
   // // 3 x 3
   // Eigen::MatrixXd a33b(3, 3);
-  // a33b << 1, 2, 3, 2, 3, 4, 4, 5, 6;
+  // a33b << 1, 0, 0, 2, 3, 0, 4, 5, 6;
   // Eigen::VectorXd u3b(3);
   // u3b << 1, 2, 3;
   // expect_diag_pre_multiply_tri(u3b, a33b);
