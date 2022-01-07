@@ -42,6 +42,7 @@
 #include <stan/math/rev/fun/csr_matrix_times_vector.hpp>
 #include <stan/math/rev/fun/determinant.hpp>
 #include <stan/math/rev/fun/diag_pre_multiply.hpp>
+#include <stan/math/rev/fun/diag_pre_multiply_tri.hpp>
 #include <stan/math/rev/fun/diag_post_multiply.hpp>
 #include <stan/math/rev/fun/digamma.hpp>
 #include <stan/math/rev/fun/dims.hpp>

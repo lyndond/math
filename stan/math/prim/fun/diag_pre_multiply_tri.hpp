@@ -8,7 +8,7 @@ namespace stan {
 namespace math {
 
 /**
- * Return the product of the diagonal matrix formed from the vector
+ * Return the product of the diagonal matrix formed from a vector
  * or row_vector and a lower-triangular matrix.
  *
  * @tparam T1 type of the vector/row_vector
@@ -29,7 +29,7 @@ auto diag_pre_multiply_tri(const T1& m1, const T2& m2) {
   check_lower_triangular("diag_pre_multiply_tri", "m2", m2);
 
   const int n = m2.rows();
-  Eigen::MatrixXd res(n, n);
+  Eigen::MatrixXd res(m2);
 
   for(size_t r = 0; r<m1.size(); ++r){
       for(size_t c = 0; c<=r; ++c){
